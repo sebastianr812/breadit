@@ -23,7 +23,6 @@ export const fetchCache = 'force-no-store';
 
 const page = async ({
     params: {
-        slug,
         postId
     }
 }: PageProps) => {

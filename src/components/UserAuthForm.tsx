@@ -28,7 +28,6 @@ const UserAuthForm: FC<UserAuthFormProps> = ({
                 description: 'There was an error logging in with Google',
                 variant: 'destructive'
             });
-            console.log(e);
         } finally {
             setIsLoading(false);
         }

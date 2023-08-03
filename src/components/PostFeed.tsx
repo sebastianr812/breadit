@@ -29,7 +29,7 @@ const PostFeed: FC<PostFeedProps> = ({
 
     const { data: session } = useSession();
 
-    const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
+    const { data, fetchNextPage } = useInfiniteQuery(
         ['infinite-query'],
         async ({ pageParam = 1 }) => {
             const query =
@@ -85,6 +85,7 @@ const PostFeed: FC<PostFeedProps> = ({
                     )
                 } else {
                     return <Post
+                        key={post.id}
                         votesAmt={votesAmount}
                         currentVote={currentVote}
                         commentAmt={post.comments.length}

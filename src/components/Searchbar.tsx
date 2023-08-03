@@ -1,8 +1,8 @@
 'use client';
 
-import { FC, useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from './ui/command'
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Prisma, Subreddit } from '@prisma/client';
 import { usePathname, useRouter } from 'next/navigation';
@@ -10,11 +10,7 @@ import { Users } from 'lucide-react';
 import debounce from 'lodash.debounce';
 import { useOnClickOutside } from '@/hooks/use-on-click-outside';
 
-interface SearchbarProps {
-
-}
-
-const Searchbar: FC<SearchbarProps> = ({ }) => {
+const Searchbar = () => {
 
     const router = useRouter();
     const pathname = usePathname();
@@ -33,7 +29,6 @@ const Searchbar: FC<SearchbarProps> = ({ }) => {
         data: queryData,
         refetch,
         isFetched,
-        isFetching
     } = useQuery({
         queryFn: async () => {
             if (!input) return [];
@@ -52,7 +47,7 @@ const Searchbar: FC<SearchbarProps> = ({ }) => {
 
     const debounceRequest = useCallback(() => {
         request();
-    }, []);
+    }, [request]);
 
     return (
         <Command className='relative z-50 max-w-lg overflow-visible border rounded-lg' ref={commandRef}>

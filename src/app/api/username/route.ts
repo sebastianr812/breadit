@@ -1,7 +1,7 @@
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { UserNameValidator } from "@/lib/validators/username";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import * as z from 'zod';
 
 export async function PATCH(req: Request) {

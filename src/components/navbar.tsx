@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Icons } from "./icons";
-import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/Button";
 import { getAuthSession } from "@/lib/auth";
 import UserAccountNav from "./UserAccountNav";
