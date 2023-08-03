@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/Button";
 import { getAuthSession } from "@/lib/auth";
 import UserAccountNav from "./UserAccountNav";
+import Searchbar from "./Searchbar";
 
 const Navbar = async () => {
 
@@ -20,6 +21,8 @@ const Navbar = async () => {
                     </p>
                 </Link>
                 {/* Search Bar */}
+
+                <Searchbar />
 
                 {/* Auth */}
 
